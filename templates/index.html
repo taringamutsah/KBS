@@ -1,0 +1,42 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KBS</title>
+</head>
+<body>
+   
+</body>
+</html> -->
+
+{% extends 'base.html' %}
+
+
+{% block head %}
+<title>KBS ASSIGNMENT 2</title>
+{% endblock %}
+
+
+{% block body %}
+
+    <div  style="margin-top: 100px;">
+        <h1>Upload Video</h1>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="flashes">
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+        <form action="/" method="POST" enctype="multipart/form-data">
+            <input type="file" name="video" required>
+            <input type="submit" value="Upload" id="submit">
+        </form>
+        <p class="my-5">!!The process of detecting objects may time so wait until the process is done when you upload your video.</p>
+    </div>
+    
+{% endblock %}
