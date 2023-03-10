@@ -97,4 +97,4 @@ def objects():
     return render_template('objects.html', object_name = object_name, data = data)
 
 if(__name__ == "__main__"):
-    app.run(debug = True)
+    app.run()
